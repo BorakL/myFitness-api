@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const path = require('path');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -66,8 +67,8 @@ app.use(
   })
 );
 
-// Serving static files
-app.use(express.static(`${__dirname}/public`));
+// Serving static files 
+app.use(express.static(path.join(__dirname, "public")));
 
 // Test middleware
 app.use((req, res, next) => {
@@ -85,9 +86,14 @@ app.use('/api/v1/trainingPlans',trainingPlanRouter);
 app.use('/api/v1/trainingPlansReviews',trainingPlanReviewRouter)
 
 
-app.all('*', (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-});
+// app.all('*', (req, res, next) => {
+//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+// });
+ 
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 app.use(globalErrorHandler);
 
