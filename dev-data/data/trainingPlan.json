@@ -1,0 +1,34 @@
+[
+    {
+        "name":"Lorem ipsum dolor",
+        "description":"Vivamus sodales quam vitae diam tincidunt bibendum. Morbi venenatis placerat nibh ac eleifend. Aliquam vel est eu augue vulputate dapibus vitae vitae felis. Donec mollis porta eros. Vivamus convallis faucibus porttitor. Pellentesque ut tristique ipsum, id laoreet risus. Maecenas et metus eget turpis imperdiet dapibus. Fusce vestibulum commodo turpis, nec facilisis turpis maximus vel.",
+        "weeks":3,
+        "plan":[
+            "63dedf2ce80a921bb499de45",
+            "",
+            "63dedf2ce80a921bb499de65",
+            "",
+            "63dedf2ce80a921bb499de4a",
+            "",
+            "",
+            "63dedf2ce80a921bb499de4f"
+        ],
+        "rating":4
+    },
+    {
+        "name":"Nulla facilisi",
+        "description":"Nullam tempor eget massa eu volutpat. Pellentesque feugiat, est vitae tempus posuere, neque mauris fringilla tellus, vitae molestie mauris arcu quis nisl. Nunc ullamcorper ante sed nulla mollis dapibus. Aenean aliquet nulla sed interdum viverra. Nulla sit amet tincidunt quam, in porta turpis. Vestibulum quis varius nunc, nec ultricies urna. Cras eget lobortis felis. Fusce gravida cursus ipsum, a blandit lacus lobortis vitae.",
+        "weeks":2,
+        "plan":[
+            "63dedf2ce80a921bb499de60",
+            "",
+            "63dedf2ce80a921bb499de4a",
+            "",
+            "",
+            "63dedf2ce80a921bb499de4f",
+            "",
+            "63dedf2ce80a921bb499de6f"
+        ],
+        "rating":4
+    }
+]
