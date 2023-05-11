@@ -9,7 +9,7 @@
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js"
   },
-  "author": "Jonas Schmedtmann",
+  "author": "Luka Borak",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
