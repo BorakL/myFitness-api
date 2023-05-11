@@ -22,9 +22,8 @@ exports.getAllWorkout = catchAsync(async (req,res,next)=>{
     if(req.query.level) query.level = {$in: req.query.level.split("+")};
     if(req.query.category) query.category = {$in: req.query.category.split("+")};
     if(req.query.sort) sort = setSortParam(req) 
-    if(req.query.name) { 
-        query.muscleGroups = {$regex: req.query.name.trim(), $options:"i"}
-    } 
+    if(req.query.name) { query.muscleGroups = {$regex: req.query.name.trim(), $options:"i"}
+} 
     const data = await Workout.aggregate([ 
 
         // {

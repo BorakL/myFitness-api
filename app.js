@@ -20,6 +20,9 @@ const reviewRouter = require('./routes/reviewRoutes');
 const trainingPlanRouter = require('./routes/trainingPlanRoutes');
 const trainingPlanReviewRouter = require('./routes/trainingPlanReviewRoutes');
 const cors = require('cors'); 
+const supplementRouter = require('./routes/supplementRoutes');
+const orderRouter = require('./routes/orderRoutes');
+const reviewSupplementRouter = require('./routes/reviewSupplementRoutes');
 
 
 
@@ -84,11 +87,9 @@ app.use('/api/v1/workouts',workoutRouter)
 app.use('/api/v1/reviews',reviewRouter)
 app.use('/api/v1/trainingPlans',trainingPlanRouter);
 app.use('/api/v1/trainingPlansReviews',trainingPlanReviewRouter)
-
-
-// app.all('*', (req, res, next) => {
-//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-// });
+app.use('/api/v1/supplements',supplementRouter)
+app.use('/api/v1/orders',orderRouter)
+app.use('/api/v1/supplementReviews', reviewSupplementRouter)
  
 
 app.get('*', (req, res) => {

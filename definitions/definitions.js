@@ -77,3 +77,29 @@ exports.genderType = [
     "Male",
     "Female"
 ]
+
+exports.supplementBrands = [
+    "Bsn",
+    "Bpi",
+    "Muscletech",
+    "Nutrex",
+    "Universal",
+    "ProSupps",
+    "Cellucor"
+]
+
+exports.supplementCategories = [
+    "Protein",
+    "Creatine",
+    "Vitamins & Minerals",
+    "Pre-Workout",
+    "Fatt Loss"
+]
+
+exports.supplementMeassures = [
+    "g",
+    "lb",
+    "ml",
+    "servings",
+    "capsules"
+]

@@ -44,9 +44,9 @@ exports.getOne = (Model,populateOptions) =>
         let doc;
         const query = Model.findById(req.params.id) 
         //Za virtuelne reference
-        if(populateOptions){ 
+        if(populateOptions){
             let skip = req.query.skip*1 || 0;
-            let limit = req.query.limit*1 || 0; 
+            let limit = req.query.limit*1 || 100; 
             query.populate({...populateOptions, options:{skip, limit} })
         }
         doc = await query;
@@ -70,6 +70,9 @@ exports.getAll = (Model) =>
         }
         if(req.params.trainingPlanId){
             filter.trainingPlan = req.params.trainingPlanId
+        }
+        if(req.params.supplementId){
+            filter.supplement = req.params.supplementId
         }
 
         const docs = await Model.find(filter);

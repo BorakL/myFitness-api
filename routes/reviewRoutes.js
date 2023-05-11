@@ -4,7 +4,6 @@ const authController = require('./../controllers/authController')
 
 const reviewRouter = express.Router({mergeParams:true});
 
-
 reviewRouter.route("/").
     get(getAllReviews).
     post(authController.protect,
