@@ -19,10 +19,10 @@ exports.getAllReviews = catchAsync( async (req,res,next)=>{
     let skip = req.query.skip*1 || 0;
     const reviews = await Review.aggregate([
         {
-            $match:{workout: mongoose.Types.ObjectId(req.params.workoutId)}
+            $match: {workout: mongoose.Types.ObjectId(req.params.workoutId)}
         },
         {
-            $facet:{
+            $facet: {
                 data:[
                     {$skip:skip},
                     {$limit:limit}
@@ -33,7 +33,7 @@ exports.getAllReviews = catchAsync( async (req,res,next)=>{
             }
             
         }
-    ]) 
+    ])
     res.status(200).json({
         status:"success",
         reviews

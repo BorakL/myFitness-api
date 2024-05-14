@@ -6,6 +6,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const path = require('path');
+const cors = require('cors'); 
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -19,7 +20,6 @@ const workoutRouter = require('./routes/workoutRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const trainingPlanRouter = require('./routes/trainingPlanRoutes');
 const trainingPlanReviewRouter = require('./routes/trainingPlanReviewRoutes');
-const cors = require('cors'); 
 const supplementRouter = require('./routes/supplementRoutes');
 const orderRouter = require('./routes/orderRoutes');
 const reviewSupplementRouter = require('./routes/reviewSupplementRoutes');
@@ -91,8 +91,10 @@ app.use('/api/v1/orders',orderRouter)
 app.use('/api/v1/supplementReviews', reviewSupplementRouter)
  
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+app.get("*", (req,res)=>{
+  res.status(200).json({
+    message: "Hello World"
+  })
 })
 
 app.use(globalErrorHandler);

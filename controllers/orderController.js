@@ -21,7 +21,7 @@ exports.getAllOrders = catchAsync(async (req,res,next)=>{
     let skip = req.query.skip*1 || 0
     let limit = req.query.limit*1 || 100
     let sort = {"_id":-1};
-    if(req.query.sort) sort=setSortParam(req)
+    if(req.query.sort) sort = setSortParam(req)
     if(req.query.user) query.user = new ObjectId(req.query.user)
 
     let orders = await Order.aggregate([
