@@ -27,8 +27,13 @@ const reviewSupplementRouter = require('./routes/reviewSupplementRoutes');
 
 
 const app = express();
-
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions));
 
 // 1) GLOBAL MIDDLEWARES
 // Set security HTTP headers
