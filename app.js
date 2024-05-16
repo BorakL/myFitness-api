@@ -6,14 +6,16 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const path = require('path');
-const cors = require('cors'); 
+const cors = require('cors');
+const dotenv = require('dotenv');
+
+// import { fileURLToPath } from "url";
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 // const configRouter = require('./routes/configRouter')
 
 
-//const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const exerciseRouter = require('./routes/exerciseRoutes');
 const workoutRouter = require('./routes/workoutRoutes');
@@ -27,6 +29,10 @@ const reviewSupplementRouter = require('./routes/reviewSupplementRoutes');
 
 
 const app = express();
+// const __filename = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(__filename) 
+dotenv.config({ path: `${__dirname}/config.env` });
+
 const corsOptions = {
   origin: process.env.CLIENT_URL,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

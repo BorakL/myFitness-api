@@ -1,5 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); 
+const app = require('../app');
 const dotenv = require('dotenv');
+dotenv.config({ path: `${__dirname}/config.env` });
 
 process.on('uncaughtException', err => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
@@ -7,17 +9,10 @@ process.on('uncaughtException', err => {
   process.exit(1);
 });
 
-dotenv.config({ path: './config.env' });
-const app = require('./../app');
-
 const DB = process.env.DATABASE;
 
 mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  })
+  .connect(DB)
   .then(() => console.log('DB connection successful!'));
 
 const port = process.env.PORT || 3000;
